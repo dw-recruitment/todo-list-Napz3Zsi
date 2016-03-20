@@ -20,8 +20,20 @@
       [:img {:src "http://c71123.com/img/jk_keller-under_construction.gif"}]
       ]]))
 
+(defn about []
+  (html5
+    [:html
+     [:head
+      [:title "Software Developer"]]
+     [:body
+      [:h1 "About This Project"]
+      [:p "This is a To Do List web application built with Clojure."]
+      [:p "I am performing this test for the fantastic company, Democracy Works!"]
+      ]]))
+
 (defroutes app-routes
   (GET "/" [] (index))
+  (GET "/about" [] (about))
   (route/not-found "Not Found"))
 
 (def app
