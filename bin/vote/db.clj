@@ -40,8 +40,10 @@
 (insert! db :list first-item second-item third-item)
 
 (def first-thing
-  (query db ["select name from list where id=1"]))
+  (query db ["select name from list where id=?" 1]))
 (def second-thing
   (query db ["select name from list where id=?" 2]))
 (def third-thing
   (query db ["select name from list where id=?" 3]))
+
+;(defn create [new-item] (insert! db :list new-item))
